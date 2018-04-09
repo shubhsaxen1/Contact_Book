@@ -1,244 +1,231 @@
 <html>
-    <head>
-        <title>Contact Form</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-        <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
-        <link href='custom.css' rel='stylesheet' type='text/css'>
-        <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-    </head>
-    <body ng-app="myApp">
 
-        <div ng-controller="AppController as ctrl" class="container">
+<head>
+    <title>Contact Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link href='custom.css' rel='stylesheet' type='text/css'>
+    <link href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+</head>
 
-          
+<body ng-app="myApp">
 
-
-
-                <div class="col-lg-12 ">
-
-                    <h1 style="margin-left: 31%">Sample Contact Application</h1>
-
-                     
-
-               
-
-                    <form class="form-horizontal" ng-submit="ctrl.submit()" name="userForm" role="form" novalidate>
+    <div ng-controller="AppController as ctrl" class="container">
 
 
 
 
-  <div class="row">
-                                    
+
+        <div class="col-lg-12 ">
+
+            <h1 style="margin-left: 31%">Sample Contact Application</h1>
+
+
+
+
+
+            <form class="form-horizontal" ng-submit="ctrl.submit()" name="userForm" role="form" novalidate>
+
+
+
+
+                <div class="row">
+
                     <fieldset class="form-group mb-1 col-md-6 pl-0">
-                      
+
                         <input type="hidden" ng-model="ctrl.user.id" />
-        <div class="form-group" ng-class="{ 'has-error' : userForm.fname.$invalid && !userForm.fname.$pristine }" >
-            <label  class="col-sm-3 control-label">First Name</label>
-            <div class="col-sm-6">
-                <input type="text" name="fname" class="form-control" ng-model="ctrl.user.fname" required pattern=".{2,}" />
-                
-                                      <span ng-show="userForm.fname.$error.required && !userForm.fname.$pristine" class="help-block">This is a required field</span>
-                                      
-                                      <!-- <span ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">This field is invalid </span> -->
-                                  
-            </div>
-           
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.fname.$invalid && !userForm.fname.$pristine }">
+                            <label class="col-sm-3 control-label">First Name</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="fname" class="form-control" ng-model="ctrl.user.fname" required pattern=".{2,}" />
 
-        </div>
-      </fieldset>
+                                <span ng-show="userForm.fname.$error.required && !userForm.fname.$pristine" class="help-block">This is a required field</span>
+
+                                <!-- <span ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">This field is invalid </span> -->
+
+                            </div>
 
 
+                        </div>
+                    </fieldset>
 
 
-       <fieldset class="form-group mb-1 col-md-6 pl-0">
-                      
+
+
+                    <fieldset class="form-group mb-1 col-md-6 pl-0">
+
                         <input type="hidden" ng-model="ctrl.user.id" />
-        <div class="form-group" ng-class="{ 'has-error' : userForm.lname.$invalid && !userForm.lname.$pristine }" >
-            <label  class="col-sm-3 control-label">Last Name</label>
-            <div class="col-sm-6">
-                <input type="text" name="lname" class="form-control" ng-model="ctrl.user.lname" required pattern=".{2,}" />
-                
-                                      <span ng-show="userForm.lname.$error.required && !userForm.lname.$pristine" class="help-block">This is a required field</span>
-                                      
-                                      <!-- <span ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">This field is invalid </span> -->
-                                  
-            </div>
-           
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.lname.$invalid && !userForm.lname.$pristine }">
+                            <label class="col-sm-3 control-label">Last Name</label>
+                            <div class="col-sm-6">
+                                <input type="text" name="lname" class="form-control" ng-model="ctrl.user.lname" required pattern=".{2,}" />
 
-        </div>
-      </fieldset>
-   
-      <br>
-      <br>
-      <br>
-      <br>
-       <br>
-     
+                                <span ng-show="userForm.lname.$error.required && !userForm.lname.$pristine" class="help-block">This is a required field</span>
 
+                                <!-- <span ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">This field is invalid </span> -->
+
+                            </div>
+
+
+                        </div>
+                    </fieldset>
+
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
 
 
 
 
-                                    
-       <fieldset class="form-group mb-1 col-md-6 pl-0">
-        
-        <div class="form-group " ng-class="{ 'has-error' : userForm.status.$invalid && !userForm.status.$pristine }">
-            <label for="status" class="col-sm-3 control-label">Status</label>
-            <div class="col-sm-6">
-                <select name="status" class="form-control" ng-model="ctrl.user.status" required>
+
+                    <fieldset class="form-group mb-1 col-md-6 pl-0">
+
+                        <div class="form-group " ng-class="{ 'has-error' : userForm.status.$invalid && !userForm.status.$pristine }">
+                            <label for="status" class="col-sm-3 control-label">Status</label>
+                            <div class="col-sm-6">
+                                <select name="status" class="form-control" ng-model="ctrl.user.status" required>
                     
                     <option value="Active">Active</option>
                     <option value="Inactive">InActive</option>
                 </select>
-                
-                                      <span ng-show="userForm.status.$error.required && !userForm.status.$pristine" class="help-block">This is a required field</span>
-                                      
 
-                                  
-            </div>
-           
-        </div>
-      </fieldset>
-    
-
- <fieldset class="form-group mb-1 col-md-6 pl-0">
-        <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
-            <label class="col-sm-3 control-label">Email ID</label>
-            <div class="col-sm-6">
-                <input type="email" class="form-control" name="email" ng-model="ctrl.user.email" required="" />
-                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
-            </div>
-         
-
-        </div>
-    </fieldset>
+                                <span ng-show="userForm.status.$error.required && !userForm.status.$pristine" class="help-block">This is a required field</span>
 
 
 
-       <fieldset class="form-group mb-1 col-md-6 pl-0">
+                            </div>
 
-        <div class="form-group" ng-class="{ 'has-error' : userForm.phn.$invalid && !userForm.phn.$pristine }">
-            <label class="col-sm-3 control-label">Phone Number</label>
-            <div class="col-sm-6">
-                <input type="number" name="phn" class="form-control" ng-model="ctrl.user.phn" required ng-minlength="10" ng-maxlength="10" />
-              
-                                      <span ng-show="userForm.phn.$error.required && !userForm.phn.$pristine" class="help-block">This is a required field</span>
-                                      
-                                  <!--     <span ng-show="userForm.phn.$invalid && !userForm.phn.$pristine" class="help-block">This field is invalid </span> -->
-                                      <span
-                                      ng-show="((userForm.phn.$error.minlength ||
+                        </div>
+                    </fieldset>
+
+
+                    <fieldset class="form-group mb-1 col-md-6 pl-0">
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.email.$invalid && !userForm.email.$pristine }">
+                            <label class="col-sm-3 control-label">Email ID</label>
+                            <div class="col-sm-6">
+                                <input type="email" class="form-control" name="email" ng-model="ctrl.user.email" required="" />
+                                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Enter a valid email.</p>
+                            </div>
+
+
+                        </div>
+                    </fieldset>
+
+
+
+                    <fieldset class="form-group mb-1 col-md-6 pl-0">
+
+                        <div class="form-group" ng-class="{ 'has-error' : userForm.phn.$invalid && !userForm.phn.$pristine }">
+                            <label class="col-sm-3 control-label">Phone Number</label>
+                            <div class="col-sm-6">
+                                <input type="number" name="phn" class="form-control" ng-model="ctrl.user.phn" required ng-minlength="10" ng-maxlength="10" />
+
+                                <span ng-show="userForm.phn.$error.required && !userForm.phn.$pristine" class="help-block">This is a required field</span>
+
+                                <!--     <span ng-show="userForm.phn.$invalid && !userForm.phn.$pristine" class="help-block">This field is invalid </span> -->
+                                <span ng-show="((userForm.phn.$error.minlength ||
                            userForm.phn.$error.maxlength) && 
                            userForm.phn.$dirty) " class="help-block">
                            phone number should be 10 digits</span>
-                                
-
-            </div>
-           
-
-        </div>
-    </fieldset>
 
 
- 
+                            </div>
+
+
+                        </div>
+                    </fieldset>
 
 
 
 
-
-    
-
-
-
-
-
-
-
-
-</div>
-
-
-<div class="row">
-
-  <div class="col-sm-4"></div>
-<div class="col-sm-2 form-group mb-1">
-
-   <input type="submit"  value="{{!ctrl.user.id ? 'Add' : 'Update'}}" class="btn  btn-info  bg-blue bg-darken-2 btn-block" ng-disabled="userForm.$invalid">
-                                        
-                                    </div>
-
-<div class="col-sm-1"></div>
-                                    <div class="col-sm-2 form-group mb-1">
-
-  <button type="button" ng-click="ctrl.reset()" class="btn  btn-info  bg-blue bg-darken-2  btn-block" ng-disabled="userForm.$pristine">Clear</button>
-                                    </div>
-                                  </div>
-
-      
-    </form>
 
                 </div>
 
-          
+
+                <div class="row">
+
+                    <div class="col-sm-4"></div>
+                    <div class="col-sm-2 form-group mb-1">
+
+                        <input type="submit" value="{{!ctrl.user.id ? 'Add' : 'Update'}}" class="btn  btn-info  bg-blue bg-darken-2 btn-block" ng-disabled="userForm.$invalid">
+
+                    </div>
+
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2 form-group mb-1">
+
+                        <button type="button" ng-click="ctrl.reset()" class="btn  btn-info  bg-blue bg-darken-2  btn-block" ng-disabled="userForm.$pristine">Clear</button>
+                    </div>
+                </div>
 
 
-            <div class="col-lg-12">
+            </form>
+
+        </div>
+
+
+
+
+        <div class="col-lg-12">
 
 
             <div class="panel panel-default">
                 <!-- Default panel contents -->
-              <div class="panel-heading"><span class="lead">List of Users </span></div>
-              <div class="tablecontainer table-responsive">
-                  <table class="table mb-0 table-striped m-b-0 f-14 zero-configuration" id="example"  cellspacing="0" width="100%">
-                      <thead>
-                          <tr>
-                              
-                              <th>First Name</th>
+                <div class="panel-heading"><span class="lead">List of Users </span></div>
+                <div class="tablecontainer table-responsive">
+                    <table class="table mb-0 table-striped m-b-0 f-14 zero-configuration" id="example" cellspacing="0" width="100%">
+                        <thead>
+                            <tr>
+
+                                <th>First Name</th>
                                 <th>Last Name</th>
-                           
-                              
-                              <th>Email</th>
-                              <th> Phone Number</th>
-                              <th> Status</th>
 
-                              <th width="100"></th>
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr ng-repeat="u in ctrl.user_json track by $index " ng-if="u.deleted!=true">
-                              
-                              <td><span ng-bind="u.fname"></span></td>
+
+                                <th>Email</th>
+                                <th> Phone Number</th>
+                                <th> Status</th>
+
+                                <th width="100"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="u in ctrl.user_json track by $index " ng-if="u.deleted!=true">
+
+                                <td><span ng-bind="u.fname"></span></td>
                                 <td><span ng-bind="u.lname"></span></td>
-                     
-                              
-                              <td><span ng-bind="u.email"></span></td>
-                              <td><span ng-bind="u.phn"></span></td>
-                               <td><span ng-bind="u.status"></span></td>
-                              <td>
-                              <button type="button" ng-click="ctrl.edit(u.id)" class="btn btn-success custom-width">Edit</button> 
-                              <button type="button" ng-click="ctrl.remove(u.id)" class="btn btn-danger custom-width">Remove</button>
-                              </td> 
-                          </tr>
-                      </tbody>
-                  </table>
-              </div>
-          </div>
+
+
+                                <td><span ng-bind="u.email"></span></td>
+                                <td><span ng-bind="u.phn"></span></td>
+                                <td><span ng-bind="u.status"></span></td>
+                                <td>
+                                    <button type="button" ng-click="ctrl.edit(u.id)" class="btn btn-success custom-width">Edit</button>
+                                    <button type="button" ng-click="ctrl.remove(u.id)" class="btn btn-danger custom-width">Remove</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
-        </div>
-    
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-      
-        <script src="http://code.angularjs.org/1.2.6/angular.js"></script> 
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.min.js"></script>
-        <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-        <script src="controller.js"></script>
-        
+    </div>
 
-        <!-- <script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <script src="http://code.angularjs.org/1.2.6/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28//angular-route.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <script src="controller.js"></script>
+
+
+    <!-- <script>
 
             $(document).ready(function() {
     $('#example').DataTable();
@@ -247,6 +234,7 @@
 
   </script> -->
 
-        
-    </body>
+
+</body>
+
 </html>
